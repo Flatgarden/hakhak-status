@@ -1,34 +1,4 @@
-# status.hana.ooo
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# HakHak Status
+https://status.hakhak.io
+![N](https://user-images.githubusercontent.com/59823089/129847280-5f681bc3-4ffc-42a4-a745-08f92e42cb75.png)
+![D](https://user-images.githubusercontent.com/59823089/129847291-5a0ddac7-57f3-4e29-baa7-350168289924.png)
