@@ -1,6 +1,9 @@
 <template>
   <v-main>
-    <!-- <v-parallax height="320" src="" /> -->
+    <v-parallax
+      height="320"
+      :src="require('@/assets/' + system.status + '.jpg')"
+    />
 
     <v-container class="mb-16">
       <v-alert
@@ -29,7 +32,7 @@
           <v-card elevation="16">
             <v-list-item two-line>
               <v-list-item-avatar>
-                <v-avatar color="#7f00ff" size="40">
+                <v-avatar :color="service.color" size="40">
                   <v-icon dark>{{ service.icon }}</v-icon>
                 </v-avatar>
               </v-list-item-avatar>
@@ -66,7 +69,7 @@
   </v-main>
 </template>
 
-<script lang="ts">
+<script>
 import {
   defineComponent,
   onBeforeMount,
@@ -93,34 +96,57 @@ export default defineComponent({
       },
       services: [
         {
-          icon: "mdi-home-roof",
-          title: "Main",
+          color: "orange",
+          icon: "mdi-cellphone-text",
+          title: "Production",
           status: "None",
           desc: "",
-          url: "https://hana.run/.well-known/apollo/server-health",
+          url: "https://hakhak.io/.well-known/apollo/server-health",
         },
         {
-          icon: "mdi-cube",
-          title: "Auth",
+          color: "deep-purple accent-2",
+          icon: "mdi-application",
+          title: "Production Admin",
           status: "None",
           desc: "",
-          url: "https://auth.hana.run/.well-known/apollo/server-health",
+          url: "https://admin.hakhak.io/.well-known/apollo/server-health",
         },
         {
-          icon: "mdi-school",
-          title: "School",
+          color: "orange",
+          icon: "mdi-cellphone-text",
+          title: "Staging",
           status: "None",
           desc: "",
-          url: "https://school.hana.run/.well-known/apollo/server-health",
+          url: "https://staging.hakhak.io/.well-known/apollo/server-health",
+        },
+        {
+          color: "deep-purple accent-2",
+          icon: "mdi-application",
+          title: "Staging Admin",
+          status: "None",
+          desc: "",
+          url: "https://admin-staging.hakhak.io/.well-known/apollo/server-health",
+        },
+        {
+          color: "orange",
+          icon: "mdi-cellphone-text",
+          title: "Development",
+          status: "None",
+          desc: "",
+          url: "https://dev.hakhak.io/.well-known/apollo/server-health",
+        },
+        {
+          color: "deep-purple accent-2",
+          icon: "mdi-application",
+          title: "Development Admin",
+          status: "None",
+          desc: "",
+          url: "https://admin-dev.hakhak.io/.well-known/apollo/server-health",
         },
       ],
     })
 
-    const getStatus = async (e: {
-      url: string
-      status: string
-      desc: string
-    }) => {
+    const getStatus = async (e) => {
       await axios
         .get(e.url)
         .then(() => {
@@ -141,6 +167,10 @@ export default defineComponent({
         : state.system.degraded
         ? "Degraded"
         : "Normal"
+
+      document
+        .getElementById("favicon")
+        .setAttribute("href", state.system.status + ".svg")
     })
 
     return {
