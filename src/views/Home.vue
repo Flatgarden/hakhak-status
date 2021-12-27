@@ -101,7 +101,7 @@ export default defineComponent({
           title: "Production",
           status: "None",
           desc: "",
-          url: "https://hakhak.io/.well-known/apollo/server-health",
+          url: "https://api.hakhak.io/.well-known/apollo/server-health",
         },
         {
           color: "deep-purple accent-2",
@@ -117,7 +117,7 @@ export default defineComponent({
           title: "Staging",
           status: "None",
           desc: "",
-          url: "https://staging.hakhak.io/.well-known/apollo/server-health",
+          url: "https://api-staging.hakhak.io/.well-known/apollo/server-health",
         },
         {
           color: "deep-purple accent-2",
@@ -133,7 +133,7 @@ export default defineComponent({
           title: "Development",
           status: "None",
           desc: "",
-          url: "https://dev.hakhak.io/.well-known/apollo/server-health",
+          url: "https://api-dev.hakhak.io/.well-known/apollo/server-health",
         },
         {
           color: "deep-purple accent-2",
